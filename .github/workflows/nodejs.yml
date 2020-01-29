@@ -20,7 +20,7 @@ jobs:
 
   update:
     needs: [test]
-    if: github.ref == 'refs/heads/master' && !(github.event.size == 1 && github.event.commits[0].author.name == 'nanashi')
+    if: github.ref == 'refs/heads/master' && !((github.event.size == 1) && (github.event.commits[0].author.name == 'nanashi'))
 
     runs-on: ubuntu-latest
 
